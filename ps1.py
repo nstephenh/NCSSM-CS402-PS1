@@ -1,6 +1,6 @@
 #################################################
-#  Author:
-#  Date:
+#  Author: Noah Haskell
+#  Date: September 27, 2015
 #  PS1.py
 #################################################
 #  There is a bonus for getting this in early!
@@ -13,10 +13,25 @@
 ##if you define any helper functions, put them here and give 
 ##them a docstring.
 
+def yearify(yearnoformat):
+	"""Precondition: yearnoformat is a 2 or 4 letter string containing a year
+	Postcondition: Return the year as a 4 letter string
+
+"""
+	if len(yearnoformat) = 2 :
+		if int(yearnoformat) > 15:
+			return "20" + yearnoformat
+	else:
+		return 
+
 def meanie(theList):
     """Precondition: theList is a non-empty list of numbers
 Postcondition: return the mean of the numbers."""
-    return 0
+	total = 0
+	for item in theList:
+		total = total + item
+	mean = sum / len(theList)		
+	return mean
 
 def datePlus(theDate):
     """Precondition: theDate is a string containing a date.  
@@ -27,8 +42,13 @@ ddmmyyyy
 ddmmyy
 dd/mm/yy
 dd-mm-yy
+
 """
-    pass
+	if theDate[2] == "-" or theDate [2] == "/":
+		return int(theDate[0:2]) + int(theDate[3:5]) + int(theDate[6:-1])
+	else
+	pass
+
 #here are some tests to implement.
 datePlus("01/01/1970") == 1972
 datePlus("08/12/1995") == 2015
