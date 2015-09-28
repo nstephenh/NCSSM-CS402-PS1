@@ -115,18 +115,17 @@ Give h, m, s a two character width, padding with zeroes as needed.
 		secs = secs % (60*60*24)
 	if secs/3600 >= 1:
 		h = str(int(secs/3600))
-		secs = secs % 3600
-		
+		secs = secs % 3600	
 		if len(h) == 1:
 			h = "0" + h
 	if secs/60 >= 1:
 		m = str(int(secs/60))
-		secs = secs % 3600
+		secs = secs % 60
 		if len(m) == 1:
 			m = "0" + m
-		s = str(secs)
-		if len(s) == 1:
-			s = "0" + m
+	s = str(secs)
+	if len(s) == 1:
+		s = "0" + s
 	return ( d + ":" + h + ":"+ m + ":" + s )
 
 
@@ -134,13 +133,13 @@ def waterCloset(theString):
 	"""precondition: thesString is a string.
 postcondition: a tuple (c, w, l) where c is the number of characters in 
 theString, w is the number of words, and l is the number of lines in the string"""
-	return (len(theString),len(theString.split("")), len(theString.split("\n")))
+	return (len(theString),len(theString.split()), len(theString.split("\n")))
 
 def mathCase(x):
 	"""precondition: x is a number
 postcondition: If x > 4, f(x) = x - 4, if x < -5, f(x) = x + 5,
 otherwise, f(x) = 0."""
-    	if x > 4:
+	if x > 4:
 		return x -4
 	elif x < -5:
 		return x + 5
@@ -194,5 +193,11 @@ if __name__ == "__main__":
 	#code to test daysTillGraduation
 	print("daysToGraduation(5, 23) == 5 returns " + str(daysToGraduation(5, 23) == 5))
 	# code to test dhms
-	print (dhms(273602)) #3:04:00:02
-	print (dhms(311023)) #3:14:23:43
+	print ("dhms(273602) should be  '3:04:00:02' and is " + str(dhms(273602)))
+	print ("dhms(311023) should be  '3:14:23:43' and is " + str(dhms(311023)))
+	# code to test watercloset
+	print ("waterCloset('This \nis \nSparta!!!!') should be (22, 3, 3) and is " +  str(waterCloset('This \nis \nSparta!!!!')))
+	# code to test mathCase
+	print ("mathCase(6) should be  2 " + str(mathCase(6) == 2))
+	print ("mathCase(4) should be  0 " + str(mathCase(4) == 0))
+	print ("mathCase(-6) shoud be -1) " + str(mathCase(-6) == -1))
