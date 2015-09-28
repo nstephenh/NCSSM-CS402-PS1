@@ -149,6 +149,7 @@ otherwise, f(x) = 0."""
 
 if __name__ == "__main__":
 	# Code to test datePlus
+	failures = 0
 	for yone in range(19, 20): # For each year that starts with 19 or 20
 			for ytwo in range(0,99): # the rest of the date
 				yone = str(yone)
@@ -178,12 +179,15 @@ if __name__ == "__main__":
 						for case in cases: # and each way of writing that month
 							if (int(m) + int(d) + int(yfour)) != datePlus(case): #check and see if the sum is right
 								print ("Failure for case " + case)
+								failures +=1
 						cases = []
 						for seperator in ['', '/', '-']:
 							cases.append(m + seperator + d + seperator + str(ytwo))
 						for case in cases:
 							if (int(m) + int(d) + int(yearify(ytwo))) != datePlus(case):
 								print ("Failure for case " + case)
+								failures +=1
+	print("The following number is the number of dates that produced errors between 1900 and 2099: " + str(failures))
 
 
 	#code to test daysinyear
