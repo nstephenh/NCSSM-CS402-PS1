@@ -18,14 +18,16 @@ def yearify(yearnoformat):
 	Postcondition: Return the year as a 4 letter string
 
 """
-	if len(yearnoformat) = 2 :
-		if int(yearnoformat) > 15:
+	if len(yearnoformat) == 2 :
+		if int(yearnoformat) < 15:
 			return "20" + yearnoformat
-	else:
-		return 
+		else:
+			return "19" + yearnoformat
+	else: 
+		return yearnoformat 
 
 def meanie(theList):
-    """Precondition: theList is a non-empty list of numbers
+	"""Precondition: theList is a non-empty list of numbers
 Postcondition: return the mean of the numbers."""
 	total = 0
 	for item in theList:
@@ -34,7 +36,7 @@ Postcondition: return the mean of the numbers."""
 	return mean
 
 def datePlus(theDate):
-    """Precondition: theDate is a string containing a date.  
+	"""Precondition: theDate is a string containing a date.  
 Postcondition: Return the sum of the year, month, and day.  You must accept any of the following formats of dates.  You may assume that any year smaller than 15 is preceeded by 20 and any year larger than 15 is preceded by 19.
 dd/mm/yyyy
 dd-mm-yyyy
@@ -45,15 +47,15 @@ dd-mm-yy
 
 """
 	if theDate[2] == "-" or theDate [2] == "/":
-		return int(theDate[0:2]) + int(theDate[3:5]) + int(theDate[6:-1])
-	else
-	pass
+		return int(theDate[0:2]) + (int(theDate[3:5]) ) + int(yearify(theDate[6:]))
+	else:
+		return int(theDate[0:2]) + int(theDate[2:4]) + int(yearify(theDate[4:]))
 
 #here are some tests to implement.
-datePlus("01/01/1970") == 1972
-datePlus("08/12/1995") == 2015
-datePlus("08/12/95") == 2015
-datePlus("08/12/14") == 2034
+#print ("""datePlus("01/01/1970")""" + str(datePlus("01/01/1970") == 1972))
+#print (datePlus("08/12/1995") == 2015 )
+#print (datePlus("08/12/95") == 2015)
+#print (datePlus("08/12/14") == 2034)
 
 #Challenge question:  Why did we nest the if statements this way?
 #Can you develop a solid reason?  This is free code for the problems
