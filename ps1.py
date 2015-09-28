@@ -131,17 +131,20 @@ Give h, m, s a two character width, padding with zeroes as needed.
 
 
 def waterCloset(theString):
-    """precondition: thesString is a string.
+	"""precondition: thesString is a string.
 postcondition: a tuple (c, w, l) where c is the number of characters in 
 theString, w is the number of words, and l is the number of lines in the string"""
-    return (0,0,0)
+	return (len(theString),len(theString.split("")), len(theString.split("\n")))
 
 def mathCase(x):
-    """precondition: x is a number
+	"""precondition: x is a number
 postcondition: If x > 4, f(x) = x - 4, if x < -5, f(x) = x + 5,
 otherwise, f(x) = 0."""
-    return 0
-
+    	if x > 4:
+		return x -4
+	elif x < -5:
+		return x + 5
+	return 0
 
 
 
