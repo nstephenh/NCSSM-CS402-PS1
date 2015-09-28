@@ -9,6 +9,7 @@
 #Fill out the comment box at the top under or suffer the pain of #death and endless heckling.
 
 ##put any imports at the top of this file (right here is fine)
+import random
 
 ##if you define any helper functions, put them here and give 
 ##them a docstring.
@@ -77,11 +78,12 @@ postc: returns True if the year leaps.
 
 
 def dayInYear(year, month, day):
-    """prec:  year/month/day is a valid date
-    postc: returns the ordinal position of the day in the year
-    (Feb 15 is the 44th day of year 2000).
-    Hint:  sum is your friend"""
-    return 0
+	"""prec:  year/month/day is a valid date
+	postc: returns the ordinal position of the day in the year
+	(Feb 15 is the 44th day of year 2000).
+	Hint:  sum is your friend"""
+	isleap = int(isLeap(year))
+	dayspermonth = (31, (isleap + 28), 31, 30 , 31, 30 , 31, 31, 30, 31, 30 , 31)
 
 def daysLeftInYear(year, month, day):
     """prec:  year/month/day is a valid date
@@ -121,7 +123,23 @@ otherwise, f(x) = 0."""
 
 
 if __name__ == "__main__":
-    pass
-    ##put test code here and get rid of the pass statement.
-    ##Writing good test code helps your grade! And it prevents
-    ## you from making stupid mistakes. 
+	# Code to test datePlus
+	for yone in range(19, 20):
+			for ytwo in range(0,99):
+				yone = str(yone)
+				ytwo = str(ytwo)
+				if len(ytwo) = 1:
+					ytwo = "0" + ytwo
+				yfour = yone + ytwo
+				for m in range(1,12):
+					maxdays = 31
+					if m in [9, 4, 6, 11]:
+						maxdays = 30  #September, april June and November
+					elif m = 2:
+						if isLeap(int(year)):
+							int(year)					
+					for d in range(1,maxdays):
+						cases= []
+						for seperator in ["", "/", "-"]:
+							cases.append(
+						if sum([int(date), m, d]) != datePlus(		 
