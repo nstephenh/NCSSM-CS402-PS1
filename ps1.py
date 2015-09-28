@@ -124,22 +124,32 @@ otherwise, f(x) = 0."""
 
 if __name__ == "__main__":
 	# Code to test datePlus
-	for yone in range(19, 20):
-			for ytwo in range(0,99):
+	for yone in range(19, 20): # For each year that starts with 19 or 20
+			for ytwo in range(0,99): # the rest of the date
 				yone = str(yone)
 				ytwo = str(ytwo)
-				if len(ytwo) = 1:
+				if len(ytwo) == 1:
 					ytwo = "0" + ytwo
 				yfour = yone + ytwo
-				for m in range(1,12):
+				for m in range(1,12): # And each month in that year
 					maxdays = 31
 					if m in [9, 4, 6, 11]:
 						maxdays = 30  #September, april June and November
-					elif m = 2:
-						if isLeap(int(year)):
-							int(year)					
-					for d in range(1,maxdays):
+					elif m == 2: #February Handling
+						if isLeap(int(yfour)):
+							maxdays = 29
+						else:
+							maxdays = 28
+					m = str(m)
+					if len(m) == 1:
+						m = "0" + m				
+					for d in range(1,maxdays): # and each day in that month
+						d = str(d)
+						if len (d) == 1:
+							d = "0" + d
 						cases= []
 						for seperator in ["", "/", "-"]:
-							cases.append(
-						if sum([int(date), m, d]) != datePlus(		 
+							cases.append(m + seperator + d + seperator + yfour)
+						for case in cases: # and each way of writing that month
+							if (int(m) + int(d) + int(yfour)) != datePlus(case): #check and see if the sum is right
+								print ("Failure for case " + case)
