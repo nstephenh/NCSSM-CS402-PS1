@@ -113,13 +113,13 @@ Give h, m, s a two character width, padding with zeroes as needed.
 	if secs/3600 >= 1:
 		h = str(int(secs/3600))
 		secs = secs % 3600	
-		if len(h) == 1:
-			h = "0" + h
+	if len(h) == 1:
+		h = "0" + h
 	if secs/60 >= 1:
 		m = str(int(secs/60))
 		secs = secs % 60
-		if len(m) == 1:
-			m = "0" + m
+	if len(m) == 1:
+		m = "0" + m
 	s = str(secs)
 	if len(s) == 1:
 		s = "0" + s
