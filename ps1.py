@@ -1,12 +1,10 @@
 #################################################
 #  Author: Noah Haskell
 #  Date: September 27, 2015
+#  URL: https://github.com/nstephenh/NCSSM-CS402-PS1
 #  PS1.py
 #################################################
-#  There is a bonus for getting this in early!
-
-#If you get help on this assignment, you must report who you received #help from and on what you received help with.
-#Fill out the comment box at the top under or suffer the pain of #death and endless heckling.
+#This code can be found on github at https://github.com/nstephenh/NCSSM-CS402-PS1
 
 ##put any imports at the top of this file (right here is fine)
 import random
@@ -17,7 +15,6 @@ import random
 def yearify(yearnoformat):
 	"""Precondition: yearnoformat is a 2 or 4 letter string containing a year
 	Postcondition: Return the year as a 4 letter string
-
 """	
 	if len(yearnoformat) == 2 :
 		if int(yearnoformat) < 15:
